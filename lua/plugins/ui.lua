@@ -172,11 +172,8 @@ return {
 	{
 		"folke/snacks.nvim",
 		opts = {
-			dashboard = {
-				preset = {
-					header = false,
-				},
-			},
+			explorer = { enabled = false },
+			dashboard = {},
 		},
 	},
 }

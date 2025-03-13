@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
-
+vim.g.netrw_banner = 0
 vim.opt.number = true
 
 vim.opt.title = true
