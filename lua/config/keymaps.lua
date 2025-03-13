@@ -80,8 +80,9 @@ end, {})
 
 vim.api.nvim_create_user_command("Runcs", function()
 	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
-	-- Open terminal in split and run the command
+	-- Open terminal in split and set initial height to 5 lines
 	vim.cmd("split")
+	vim.cmd("resize 5") -- Set initial height to 5 lines
 	vim.cmd(
 		string.format(
 			[[terminal pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet run; Write-Host ''; Read-Host | Out-Null; exit"]],
@@ -101,8 +102,9 @@ end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("Createcs", function()
 	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
-	-- Open terminal in split and run the command
+	-- Open terminal in split and set initial height to 5 lines
 	vim.cmd("split")
+	vim.cmd("resize 5") -- Set initial height to 5 lines
 	vim.cmd(
 		string.format(
 			[[terminal pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet new console --use-program-main true; Write-Host ''; Read-Host | Out-Null; exit"]],
