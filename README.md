@@ -3,12 +3,14 @@
 ## General Operations
 
 ### Movement
+
 | Key | Description |
 |-----|-------------|
 | `<C-j>` | Move 10 lines down |
 | `<C-k>` | Move 10 lines up |
 
 ### Register Management
+
 | Key | Mode | Description |
 |-----|------|-------------|
 | `x` | Normal | Delete character without affecting registers |
@@ -19,6 +21,7 @@
 | `<Leader>d/D` | Normal/Visual | Delete text without affecting registers |
 
 ### Text Manipulation
+
 | Key | Description |
 |-----|-------------|
 | `+` | Increment number under cursor |
@@ -29,6 +32,7 @@
 | `<Leader>O` | Add new line above without entering insert mode |
 
 ### Tab and Buffer Management
+
 | Key | Description |
 |-----|-------------|
 | `te` | Open new tab |
@@ -38,6 +42,7 @@
 | `<leader>tu` | Close nameless buffers |
 
 ### Window Management
+
 | Key | Description |
 |-----|-------------|
 | `ss` | Split window horizontally |
@@ -48,6 +53,7 @@
 | `sl` | Move to right window |
 
 ### Window Resizing
+
 | Key | Description |
 |-----|-------------|
 | `<C-w><left>` | Decrease window width |
@@ -56,6 +62,7 @@
 | `<C-w><down>` | Decrease window height |
 
 ### Navigation and Search
+
 | Key | Description |
 |-----|-------------|
 | `<C-j>` | Move 10 lines down |
@@ -72,18 +79,21 @@
 | `gd` | Go to definition |
 
 ### Git Integration
+
 | Key | Description |
 |-----|-------------|
 | `<Leader>gb` | Open git blame window |
 | `<Leader>go` | Open file/folder in git repository |
 
 ### UI Controls
+
 | Key | Description |
 |-----|-------------|
 | `<leader>z` | Toggle Zen Mode |
 | `:Noice` | Show message history |
 
 ### File Browser Keys (when active)
+
 | Key | Mode | Description |
 |-----|------|-------------|
 | `N` | Normal | Create new file/directory |
@@ -95,6 +105,7 @@
 | `<PageDown>` | Normal | Scroll preview down |
 
 ### Special Functions
+
 | Key/Command | Description |
 |-------------|-------------|
 | `<leader>r` | Replace hex color with HSL |
@@ -108,7 +119,3 @@
 | `$$` | Move to end of line and enter insert mode |
 | `<leader>c` | Add C# comment at start of line |
 
-### Treesitter Playground Keys (when active)
-| Key | Description |
-|-----|-------------|
-| `o`
