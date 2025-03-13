@@ -247,4 +247,17 @@ return {
 			},
 		},
 	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			size = 15,
+			open_mapping = [[<leader>tt]],
+			direction = "horizontal",
+			shade_terminals = true,
+			start_in_insert = true,
+			close_on_exit = true,
+		},
+	},
 }
