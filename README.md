@@ -1,121 +1,124 @@
 # Neovim Keymap Documentation
 
-## General Operations
-
-### Movement
-
-| Key | Description |
-|-----|-------------|
-| `<C-j>` | Move 10 lines down |
-| `<C-k>` | Move 10 lines up |
-
-### Register Management
+## Navigation & Movement
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `x` | Normal | Delete character without affecting registers |
+| `<C-j>` | Normal | Move 10 lines down |
+| `<C-k>` | Normal | Move 10 lines up |
+| `$$` | Normal | Move to end of line and enter append mode |
+| `$$` | Insert | Exit insert mode, move to end of line, and enter append mode |
+
+## Window Management
+
+### Window Creation
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `ss` | Normal | Split window horizontally |
+| `sv` | Normal | Split window vertically |
+| `te` | Normal | Open new tab |
+
+### Window Navigation
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `sh` | Normal | Move to left window |
+| `sk` | Normal | Move to top window |
+| `sj` | Normal | Move to bottom window |
+| `sl` | Normal | Move to right window |
+| `<tab>` | Normal | Go to next tab |
+| `<s-tab>` | Normal | Go to previous tab |
+
+### Window Resizing
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<C-w><left>` | Normal | Decrease window width |
+| `<C-w><right>` | Normal | Increase window width |
+| `<C-w><up>` | Normal | Increase window height |
+| `<C-w><down>` | Normal | Decrease window height |
+| `<A-j>` | Normal | Decrease current window height by 2 lines |
+| `<A-k>` | Normal | Increase current window height by 2 lines |
+
+## Text Manipulation
+
+### Basic Operations
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `x` | Normal | Delete character (without affecting registers) |
+| `dw` | Normal | Delete word backwards |
+| `<C-a>` | Normal | Select all text |
+| `<A-d>` | Normal | Duplicate current line below |
+
+### Register Operations
+
+| Key | Mode | Description |
+|-----|------|-------------|
 | `<Leader>p` | Normal | Paste from register 0 |
 | `<Leader>P` | Normal | Paste before cursor from register 0 |
 | `<Leader>p` | Visual | Paste from register 0 |
 | `<Leader>c/C` | Normal/Visual | Change text without affecting registers |
 | `<Leader>d/D` | Normal/Visual | Delete text without affecting registers |
 
-### Text Manipulation
-
-| Key | Description |
-|-----|-------------|
-| `+` | Increment number under cursor |
-| `-` | Decrement number under cursor |
-| `dw` | Delete a word backwards |
-| `<C-a>` | Select all text |
-| `<Leader>o` | Add new line below without entering insert mode |
-| `<Leader>O` | Add new line above without entering insert mode |
-
-### Tab and Buffer Management
-
-| Key | Description |
-|-----|-------------|
-| `te` | Open new tab |
-| `<tab>` | Go to next tab/buffer |
-| `<s-tab>` | Go to previous tab/buffer |
-| `<leader>th` | Close hidden buffers |
-| `<leader>tu` | Close nameless buffers |
-
-### Window Management
-
-| Key | Description |
-|-----|-------------|
-| `ss` | Split window horizontally |
-| `sv` | Split window vertically |
-| `sh` | Move to left window |
-| `sk` | Move to top window |
-| `sj` | Move to bottom window |
-| `sl` | Move to right window |
-
-### Window Resizing
-
-| Key | Description |
-|-----|-------------|
-| `<C-w><left>` | Decrease window width |
-| `<C-w><right>` | Increase window width |
-| `<C-w><up>` | Increase window height |
-| `<C-w><down>` | Decrease window height |
-
-### Navigation and Search
-
-| Key | Description |
-|-----|-------------|
-| `<C-j>` | Move 10 lines down |
-| `<C-k>` | Move 10 lines up |
-| `<leader>dn` | Go to next diagnostic |
-| `;f` | Find files (respects .gitignore) |
-| `;r` | Live grep search in current directory |
-| `\\` | List open buffers |
-| `;t` | Browse help tags |
-| `;;` | Resume previous telescope picker |
-| `;e` | List diagnostics for all buffers |
-| `;s` | List Treesitter symbols |
-| `sf` | Open file browser at current buffer path |
-| `gd` | Go to definition |
-
-### Git Integration
-
-| Key | Description |
-|-----|-------------|
-| `<Leader>gb` | Open git blame window |
-| `<Leader>go` | Open file/folder in git repository |
-
-### UI Controls
-
-| Key | Description |
-|-----|-------------|
-| `<leader>z` | Toggle Zen Mode |
-| `:Noice` | Show message history |
-
-### File Browser Keys (when active)
+### Numbers & Incrementing
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `N` | Normal | Create new file/directory |
-| `h` | Normal | Go to parent directory |
-| `/` | Normal | Start insert mode (search) |
-| `<C-u>` | Normal | Move selection up 10 items |
-| `<C-d>` | Normal | Move selection down 10 items |
-| `<PageUp>` | Normal | Scroll preview up |
-| `<PageDown>` | Normal | Scroll preview down |
+| `+` | Normal | Increment number under cursor |
+| `-` | Normal | Decrement number under cursor |
 
-### Special Functions
+### Line Operations
 
-| Key/Command | Description |
-|-------------|-------------|
-| `<leader>r` | Replace hex color with HSL |
-| `<leader>i` | Toggle inlay hints |
-| `:ToggleAutoformat` | Toggle autoformatting |
-| `<leader>fP` | Find plugin file |
-| `:TSPlaygroundToggle` | Toggle Treesitter playground |
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<Leader>o` | Normal | Add new line below without entering insert mode |
+| `<Leader>O` | Normal | Add new line above without entering insert mode |
+
+## File & Project Management
+
+### File Browser
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<leader>e` | Normal | Open Netrw file explorer |
+| `<leader>wt` | Normal | Open new Windows Terminal |
+
+### C# Development
+
+| Command | Description |
+|---------|-------------|
 | `:Runcs` | Run C# project in current directory |
 | `:Createcs` | Create new C# console project |
-| `<leader>wt` | Open new Windows Terminal |
-| `$$` | Move to end of line and enter insert mode |
-| `<leader>c` | Add C# comment at start of line |
+| `cw` | Snippet for `Console.WriteLine(` |
 
+## Code Features
+
+### LSP & Diagnostics
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<leader>dn` | Normal | Go to next diagnostic |
+| `<leader>i` | Normal | Toggle inlay hints |
+| `<leader>r` | Normal | Replace hex color with HSL |
+| `:ToggleAutoformat` | Command | Toggle autoformatting |
+
+### Code Editing
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<leader>c` | Normal | Add C# comment at start of line |
+| `<C-m>` | Normal | Jump to next mark in jumplist |
+
+## Additional Features
+
+### Yanking (Copy) Behavior
+
+- Text yanking operations will be briefly highlighted
+- All operations preserve the state of registers unless explicitly using register commands
+
+### File Type Specific Features
+
+- C# files have special abbreviations and snippets
+- Markdown, JSON, and JSONC files have concealing disabled by default

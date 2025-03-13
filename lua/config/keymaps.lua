@@ -72,15 +72,15 @@ keymap.set("n", "<leader>dn", function()
 end, opts)
 
 keymap.set("n", "<leader>r", function()
-	require("craftzdog.hsl").replaceHexWithHSL()
+	require("mercury.hsl").replaceHexWithHSL()
 end)
 
 keymap.set("n", "<leader>i", function()
-	require("craftzdog.lsp").toggleInlayHints()
+	require("mercury.lsp").toggleInlayHints()
 end)
 
 vim.api.nvim_create_user_command("ToggleAutoformat", function()
-	require("craftzdog.lsp").toggleAutoformat()
+	require("mercury.lsp").toggleAutoformat()
 end, {})
 
 -- Terminal and Navigation Keymaps
