@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- netrw
+-- netrw whole page
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true })
 
 -- Move 10 lines up/down
