@@ -33,4 +33,3 @@ return {
 		end, { desc = "Next Harpoon file" })
 	end,
 }
-
