@@ -1,5 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
+local Terminal = require("toggleterm.terminal").Terminal
 
 -- netrw whole page
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true })
@@ -7,6 +8,10 @@ vim.keymap.set("n", "<leader>e", ":Explore<CR>", { noremap = true, silent = true
 -- Move 10 lines up/down
 keymap.set("n", "<C-j>", "10j", opts)
 keymap.set("n", "<C-k>", "10k", opts)
+
+-- Terminal window resize
+keymap.set("n", "<A-j>", ":resize -2<CR>", opts)
+keymap.set("n", "<A-k>", ":resize +2<CR>", opts)
 
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
@@ -78,50 +83,6 @@ vim.api.nvim_create_user_command("ToggleAutoformat", function()
 	require("craftzdog.lsp").toggleAutoformat()
 end, {})
 
-vim.api.nvim_create_user_command("Runcs", function()
-	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
-	-- Open terminal in split and set initial height to 5 lines
-	vim.cmd("split")
-	vim.cmd("resize 5") -- Set initial height to 5 lines
-	vim.cmd(
-		string.format(
-			[[terminal pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet run; Write-Host ''; Read-Host | Out-Null; exit"]],
-			file_dir
-		)
-	)
-	-- Auto-close the terminal when process completes
-	vim.api.nvim_create_autocmd("TermClose", {
-		pattern = "*",
-		once = true,
-		callback = function()
-			vim.cmd("bdelete!")
-		end,
-	})
-	vim.cmd("startinsert")
-end, { nargs = 0 })
-
-vim.api.nvim_create_user_command("Createcs", function()
-	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
-	-- Open terminal in split and set initial height to 5 lines
-	vim.cmd("split")
-	vim.cmd("resize 5") -- Set initial height to 5 lines
-	vim.cmd(
-		string.format(
-			[[terminal pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet new console --use-program-main true; Write-Host ''; Read-Host | Out-Null; exit"]],
-			file_dir
-		)
-	)
-	-- Auto-close the terminal when process completes
-	vim.api.nvim_create_autocmd("TermClose", {
-		pattern = "*",
-		once = true,
-		callback = function()
-			vim.cmd("bdelete!")
-		end,
-	})
-	vim.cmd("startinsert")
-end, { nargs = 0 })
-
 -- Terminal and Navigation Keymaps
 keymap.set("n", "<leader>wt", ":!wt -w 0 nt<CR>", opts)
 keymap.set("n", "$$", "$A", opts)
@@ -147,3 +108,45 @@ vim.api.nvim_create_autocmd("FileType", {
 
 --duplicate the current line below the current line
 vim.keymap.set("n", "<A-d>", "yyp", { noremap = true, silent = true })
+
+-- c# stuff
+-- c# stuff
+-- c# stuff
+-- c# stuff
+-- c# stuff
+-- c# stuff
+-- c# stuff
+
+-- Run C# project
+vim.api.nvim_create_user_command("Runcs", function()
+	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
+	local cmd = string.format(
+		[[pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet run; Write-Host ''; Read-Host | Out-Null; exit"]],
+		file_dir
+	)
+	local term = Terminal:new({
+		cmd = cmd,
+		direction = "horizontal", -- or "vertical"
+		size = 15,
+		close_on_exit = true, -- Optional: close terminal when command exits
+	})
+	term:open() -- Open the terminal
+	vim.api.nvim_set_current_win(term.window) -- Focus the terminal window
+end, { nargs = 0 })
+
+-- Create new C# console project
+vim.api.nvim_create_user_command("Createcs", function()
+	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/")
+	local cmd = string.format(
+		[[pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; dotnet new console --use-program-main true; Write-Host ''; Read-Host | Out-Null; exit"]],
+		file_dir
+	)
+	local term = Terminal:new({
+		cmd = cmd,
+		direction = "horizontal", -- or "vertical"
+		size = 15,
+		close_on_exit = true, -- Optional: close terminal when command exits
+	})
+	term:open() -- Open the terminal
+	vim.api.nvim_set_current_win(term.window) -- Focus the terminal window
+end, { nargs = 0 })
