@@ -134,6 +134,9 @@ return {
 				return " " .. os.date("%I:%M %p")
 			end
 
+			-- Ensure opts.sections exists and update lualine_c
+			opts.sections = opts.sections or {}
+			opts.sections.lualine_c = opts.sections.lualine_c or {}
 			opts.sections.lualine_c[4] = {
 				LazyVim.lualine.pretty_path({
 					length = 0,
@@ -146,8 +149,63 @@ return {
 				}),
 			}
 
-			-- Set clock only in the rightmost section
+			-- Set clock in lualine_z
 			opts.sections.lualine_z = { get_time }
+
+			-- Define the custom theme with all required sections
+			opts.options = opts.options or {}
+			opts.options.theme = {
+				normal = {
+					a = { bg = "#06d6a0", fg = "#ffffff" }, -- Mode
+					b = { bg = "#4a6b5b", fg = "#ffffff" }, -- Muted green-gray for "semi-transparent" effect
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#06d6a0", fg = "#ffffff" }, -- Clock
+				},
+				insert = {
+					a = { bg = "#ef476f", fg = "#ffffff" },
+					b = { bg = "#4a6b5b", fg = "#ffffff" },
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#ef476f", fg = "#ffffff" },
+				},
+				visual = {
+					a = { bg = "#ffd166", fg = "#000000" },
+					b = { bg = "#4a6b5b", fg = "#ffffff" },
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#ffd166", fg = "#000000" },
+				},
+				replace = {
+					a = { bg = "#118ab2", fg = "#ffffff" },
+					b = { bg = "#4a6b5b", fg = "#ffffff" },
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#118ab2", fg = "#ffffff" },
+				},
+				command = {
+					a = { bg = "#06d6a0", fg = "#ffffff" },
+					b = { bg = "#4a6b5b", fg = "#ffffff" },
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#06d6a0", fg = "#ffffff" },
+				},
+				inactive = {
+					a = { bg = "#4a6b5b", fg = "#ffffff" },
+					b = { bg = "#4a6b5b", fg = "#ffffff" },
+					c = { bg = "#4a6b5b", fg = "#ffffff" },
+					x = { bg = "#4a6b5b", fg = "#ffffff" },
+					y = { bg = "#4a6b5b", fg = "#ffffff" },
+					z = { bg = "#4a6b5b", fg = "#ffffff" },
+				},
+			}
+
+			return opts
 		end,
 	},
 
