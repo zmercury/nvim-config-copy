@@ -64,3 +64,5 @@ vim.g.lazyvim_cmp = "blink.cmp"
 vim.keymap.set("n", "<C-A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 -- Move line up with Ctrl+Alt+k
 vim.keymap.set("n", "<C-A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+
+vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true, silent = true })
