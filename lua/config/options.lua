@@ -59,3 +59,8 @@ vim.filetype.add({
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "blink.cmp"
+
+-- Move line down with Ctrl+Alt+j
+vim.keymap.set("n", "<C-A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+-- Move line up with Ctrl+Alt+k
+vim.keymap.set("n", "<C-A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
