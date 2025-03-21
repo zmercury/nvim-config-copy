@@ -156,52 +156,52 @@ return {
 			opts.options = opts.options or {}
 			opts.options.theme = {
 				normal = {
-					a = { bg = "#06d6a0", fg = "#ffffff" }, -- Mode
-					b = { bg = "#4a6b5b", fg = "#ffffff" }, -- Muted green-gray for "semi-transparent" effect
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#06d6a0", fg = "#ffffff" }, -- Clock
+					a = { bg = "#06d6a0", fg = "#ffffff" }, -- Mode (unchanged)
+					b = { bg = "#1e2f27", fg = "#ffffff" }, -- Dark muted green
+					c = { bg = "#1e2f27", fg = "#ffffff" },
+					x = { bg = "#1e2f27", fg = "#ffffff" },
+					y = { bg = "#1e2f27", fg = "#ffffff" },
+					z = { bg = "#06d6a0", fg = "#ffffff" }, -- Clock (unchanged)
 				},
 				insert = {
-					a = { bg = "#ef476f", fg = "#ffffff" },
-					b = { bg = "#4a6b5b", fg = "#ffffff" },
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#ef476f", fg = "#ffffff" },
+					a = { bg = "#ef476f", fg = "#ffffff" }, -- Unchanged
+					b = { bg = "#1e2f27", fg = "#ffffff" },
+					c = { bg = "#1e2f27", fg = "#ffffff" },
+					x = { bg = "#1e2f27", fg = "#ffffff" },
+					y = { bg = "#1e2f27", fg = "#ffffff" },
+					z = { bg = "#ef476f", fg = "#ffffff" }, -- Unchanged
 				},
 				visual = {
-					a = { bg = "#ffd166", fg = "#000000" },
-					b = { bg = "#4a6b5b", fg = "#ffffff" },
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#ffd166", fg = "#000000" },
+					a = { bg = "#ffd166", fg = "#000000" }, -- Unchanged
+					b = { bg = "#1e2f27", fg = "#ffffff" },
+					c = { bg = "#1e2f27", fg = "#ffffff" },
+					x = { bg = "#1e2f27", fg = "#ffffff" },
+					y = { bg = "#1e2f27", fg = "#ffffff" },
+					z = { bg = "#ffd166", fg = "#000000" }, -- Unchanged
 				},
 				replace = {
-					a = { bg = "#118ab2", fg = "#ffffff" },
-					b = { bg = "#4a6b5b", fg = "#ffffff" },
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#118ab2", fg = "#ffffff" },
+					a = { bg = "#118ab2", fg = "#ffffff" }, -- Unchanged
+					b = { bg = "#1e2f27", fg = "#ffffff" },
+					c = { bg = "#1e2f27", fg = "#ffffff" },
+					x = { bg = "#1e2f27", fg = "#ffffff" },
+					y = { bg = "#1e2f27", fg = "#ffffff" },
+					z = { bg = "#118ab2", fg = "#ffffff" }, -- Unchanged
 				},
 				command = {
-					a = { bg = "#06d6a0", fg = "#ffffff" },
-					b = { bg = "#4a6b5b", fg = "#ffffff" },
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#06d6a0", fg = "#ffffff" },
+					a = { bg = "#06d6a0", fg = "#ffffff" }, -- Unchanged
+					b = { bg = "#1e2f27", fg = "#ffffff" },
+					c = { bg = "#1e2f27", fg = "#ffffff" },
+					x = { bg = "#1e2f27", fg = "#ffffff" },
+					y = { bg = "#1e2f27", fg = "#ffffff" },
+					z = { bg = "#06d6a0", fg = "#ffffff" }, -- Unchanged
 				},
 				inactive = {
-					a = { bg = "#4a6b5b", fg = "#ffffff" },
-					b = { bg = "#4a6b5b", fg = "#ffffff" },
-					c = { bg = "#4a6b5b", fg = "#ffffff" },
-					x = { bg = "#4a6b5b", fg = "#ffffff" },
-					y = { bg = "#4a6b5b", fg = "#ffffff" },
-					z = { bg = "#4a6b5b", fg = "#ffffff" },
+					a = { bg = "#2c4038", fg = "#ffffff" }, -- Slightly lighter dark shade
+					b = { bg = "#2c4038", fg = "#ffffff" },
+					c = { bg = "#2c4038", fg = "#ffffff" },
+					x = { bg = "#2c4038", fg = "#ffffff" },
+					y = { bg = "#2c4038", fg = "#ffffff" },
+					z = { bg = "#2c4038", fg = "#ffffff" },
 				},
 			}
 

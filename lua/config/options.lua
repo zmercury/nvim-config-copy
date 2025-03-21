@@ -4,7 +4,7 @@ vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.g.netrw_banner = 0
 vim.opt.number = true
-
+vim.api.nvim_set_hl(0, "netrwDir", { fg = "#02c39a" })
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
