@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+vim.opt.cursorline = false
 vim.g.netrw_banner = 0
 vim.opt.number = true
 vim.api.nvim_set_hl(0, "netrwDir", { fg = "#02c39a" })
