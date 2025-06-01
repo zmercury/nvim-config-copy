@@ -108,3 +108,31 @@ vim.api.nvim_create_autocmd("FileType", {
 
 --duplicate the current line below the current line
 vim.keymap.set("n", "<A-d>", "yyp", { noremap = true, silent = true })
+
+-- Run Python file
+vim.api.nvim_create_user_command("Runp", function()
+	local file_dir = vim.fn.expand("%:p:h"):gsub("\\", "/") -- Get directory of current file, normalize slashes
+	local file_name = vim.fn.expand("%:p") -- Get full path of current file
+	if vim.bo.filetype == "python" then
+		local cmd = string.format(
+			[[pwsh -NoLogo -NoProfile -Command "Set-Location '%s'; py '%s'; Write-Host ''; Read-Host | Out-Null; exit"]],
+			file_dir,
+			file_name
+		)
+		local term = Terminal:new({
+			cmd = cmd,
+			direction = "horizontal", -- Horizontal split
+			size = 15, -- 15 lines
+			close_on_exit = true, -- Close terminal when command exits
+		})
+		term:open() -- Open the terminal
+		vim.api.nvim_set_current_win(term.window) -- Focus the terminal window
+	else
+		print("Not a Python file!")
+	end
+end, { nargs = 0 })
+
+-- Keybinding for Super + f p to run Python file
+vim.keymap.set("n", "<leader>fm", function()
+	vim.cmd("Runp")
+end, { desc = "Run current Python file in terminal" })
