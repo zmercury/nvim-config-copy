@@ -116,7 +116,8 @@
 ### Yanking (Copy) Behavior
 
 - Text yanking operations will be briefly highlighted
-- All operations preserve the state of registers unless explicitly using register commands
+- All operations preserve the state of registers unless explicitly
+  using register commands
 
 ### File Type Specific Features
 
