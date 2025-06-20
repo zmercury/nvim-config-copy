@@ -132,7 +132,7 @@ vim.api.nvim_create_user_command("Runp", function()
 	end
 end, { nargs = 0 })
 
--- Keybinding for Super + f p to run Python file
+-- Keybinding for Super + f m to run Python file
 vim.keymap.set("n", "<leader>fm", function()
 	vim.cmd("Runp")
 end, { desc = "Run current Python file in terminal" })
